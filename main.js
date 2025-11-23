@@ -19,12 +19,12 @@ const counting = document.getElementById("count");
 counting.style.fontSize = "9rem"
 let count = 0;
 
-inc.addEventListener("click", () => {
+function increaseC() {
   count += 1;
   counting.innerText = count;
-});
+}
 
-dec.addEventListener("click", () => {
+function decreaseC() {
   count -= 1;
   if (count < 1) {
     count = 0;
@@ -32,10 +32,48 @@ dec.addEventListener("click", () => {
   } else {
     counting.innerText = count;
   }
-  
+}
+// reseting count
+function resetC() {
+  count = 0;
+  counting.innerText = count;
+}
+inc.addEventListener("click", () => {
+  // count += 1;
+  // counting.innerText = count;
+  increaseC();
+});
+
+dec.addEventListener("click", () => {
+  // count -= 1;
+  // if (count < 1) {
+  //   count = 0;
+  //   counting.innerText = count;
+  // } else {
+  //   counting.innerText = count;
+  // }
+  decreaseC();
 });
 
 res.addEventListener("click", () => {
-  count = 0;
-  counting.innerText = count;
+  // count = 0;
+  // counting.innerText = count;
+  resetC();
 });
+
+function handleKeys(e) {
+  switch (e.key) {
+    case 'ArrowUp':
+      increaseC();
+      break;
+      
+    case "ArrowDown":
+      decreaseC();
+      break;
+      
+    case "Enter":
+      resetC();
+      break;
+  }
+}
+document.addEventListener("keydown", handleKeys);
