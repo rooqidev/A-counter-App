@@ -1,6 +1,10 @@
 // A simple counter app
 
-// Keyboard Support Added
+"Keyboard Support added"
+
+* ArrowUp for increasing the Count
+* ArrowDown for decreasing the Count
+* Enter for reseting the Count
 
 I build this small counter app where you can do countings without forcing your brain & eyes to be active & focus on one thing, count freely & without worrying about missing any item.
 
